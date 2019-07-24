@@ -7,4 +7,12 @@ docker-compose build
 docker-compose run app sh -c "django-admin.py startproject app ."
 
 5) git add .
-git commit -a
+git commit -a  (Заголовок коммита: 'Setup docker and Django project.')
+
+6) Далее настраиваем travis:
+создаем файл .travis.yml
+Когда для сохранения этого файла vs code стал запрашивать рутовые права, нашел такое решение: cd to your project folder and run sudo chmod -R 777 <project_dir_name> and done
+Я разобрался! VS code запрашивает сохранение от рута для этого файла, потому что сам сохраняет файлы по умолчанию как сторонний пользователь, не имуя рутовых прав. Когда же я дал права всем пользователям (sudo chmod 666 .travis.yml) записывать этот файл, то все стало сохраняться.
+
+7) Добавляем линтер flake8, который мы указали в .travis.yml, в файл requirements.txt
+Создаем в Django приложении app файл .flake8
