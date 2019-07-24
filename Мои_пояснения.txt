@@ -16,3 +16,5 @@ git commit -a  (Заголовок коммита: 'Setup docker and Django proj
 
 7) Добавляем линтер flake8, который мы указали в .travis.yml, в файл requirements.txt
 Создаем в Django приложении app файл .flake8
+Коммитим с заголовком "Added flake8 and Travis-CI configuration." И далее:
+git push origin
