@@ -1,0 +1,10 @@
+
+
+3) После того, как создали файл docker-compose.yml и заполнили его, выполняем команду:
+docker-compose build
+
+4) """Чтобы явно указать, что выполняется команда среды выполнения, прописываем sh -c,что означает shell command. Хотя Docker имеет синтаксический сахар, позволяя опустить эти символы, мы будем указывать их для ясности."""
+docker-compose run app sh -c "django-admin.py startproject app ."
+
+5) git add .
+git commit -a
