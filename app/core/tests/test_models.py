@@ -8,6 +8,8 @@ class ModelTests(TestCase):
         """Test creating a new user with an email is successful."""
         email = 'test@django.com'
         password = 'test123'
+        # get_user_model - is helper function, that returns
+        # the User model that is active in this project.
         user = get_user_model().objects.create_user(
             email=email,
             password=password
