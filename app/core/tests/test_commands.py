@@ -9,8 +9,10 @@ class CommandTest(TestCase):
 
     def test_wait_for_db_ready(self):
         """Test waiting for db when db is available"""
+        # with - это контекстный менеджер.
+        # That means "within patch we pass what we want to mark!"
         with patch('django.db.utils.ConnectionHandler.__getitem__') as gi:
-            """Имитация обращения к базе данных"""
+            # Имитация обращения к базе данных
             gi.return_value = True
             call_command('wait_for_db')
             self.assertEqual(gi.call_count, 1)
