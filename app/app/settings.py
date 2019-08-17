@@ -129,4 +129,8 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+# WARNING: You cannot change the AUTH_USER_MODEL setting during the lifetime
+# of a project (i.e. once you have made and migrated models that depend on it)
+# without serious effort.
+# https://docs.djangoproject.com/en/2.1/ref/settings/#std:setting-AUTH_USER_MODEL
 AUTH_USER_MODEL = 'core.User'

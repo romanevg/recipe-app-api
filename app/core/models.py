@@ -28,6 +28,10 @@ class UserManager(BaseUserManager):
         return user
 
 
+# If you’re starting a new project, it’s highly recommended to set up
+# a custom user model, even if the default User model is sufficient for you.
+# This model behaves identically to the default user model, but you’ll
+# be able to customize it in the future if the need arises
 class User(AbstractBaseUser, PermissionsMixin):
     """Custom user model that supports using email instead of username."""
     email = models.EmailField(max_length=254, unique=True)
@@ -49,6 +53,18 @@ class Tag(models.Model):
     user = models.ForeignKey(
         settings.AUTH_USER_MODEL,
         on_delete=models.CASCADE,
+    )
+
+    def __str__(self):
+        return self.name
+
+
+class Ingredient(models.Model):
+    """Ingredient to be used in a recipe."""
+    name = models.CharField(max_length=255)
+    user = models.ForeignKey(
+        settings.AUTH_USER_MODEL,
+        on_delete=models.CASCADE
     )
 
     def __str__(self):
