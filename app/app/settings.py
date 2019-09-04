@@ -128,6 +128,11 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 STATIC_URL = '/static/'
+MEDIA_URL = '/media/'
+
+# Static files for the django_rest_framework and django admin alive here.
+STASIC_ROOT = '/vol/web/static'
+MEDIA_ROOT = '/vol/web/media'
 
 # WARNING: You cannot change the AUTH_USER_MODEL setting during the lifetime
 # of a project (i.e. once you have made and migrated models that depend on it)
